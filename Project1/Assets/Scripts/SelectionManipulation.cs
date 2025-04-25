@@ -35,6 +35,7 @@ public class SelectionManipulation : MonoBehaviour
     private float rayDistance = 20f;
     private float maxDistance = 0.5f;
     private float movementSpeed = 5f;
+    private float rotateSpeed = 10f;
 
 
     // Start is called before the first frame update
@@ -151,7 +152,7 @@ public class SelectionManipulation : MonoBehaviour
             {
                 Quaternion currRotDelta = Quaternion.FromToRotation(initialVector, currVector);
                 Quaternion targetRotation = currRotDelta * initialRotation;
-                target.rotation = Quaternion.Slerp(target.rotation, targetRotation, Time.deltaTime * 15f);
+                target.rotation = Quaternion.Slerp(target.rotation, targetRotation, Time.deltaTime * rotateSpeed);
             }
         }
     }
